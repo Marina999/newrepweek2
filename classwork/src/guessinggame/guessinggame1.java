@@ -1,26 +1,58 @@
-package guessinggame;
+package myFirst;
+	
+	import java.lang.Math;
+	import java.util.Random;
+	import java.util.Scanner;
 
-import java.util.Random;
-import java.util.Scanner;
 
-public class guessinggame1 {
+public class GuessingGame {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Random rn = new Random();
-		int numberToGuess;
-		int numberOfTries=3;
+		
+		Random rand = new Random();
+		int numberToGuess = rand.nextInt(10);
+		int numberOfTries = 0;
 		Scanner input = new Scanner(System.in);
 		int guess;
-		boolean check=false;
-		int number;
 		
+		boolean win = false;
 		
-		for(int i =0; i < 100; i++)
-		{
-			int answer = rn.nextInt(10) + 1;
-		 System.out.println(answer);
-	}
+		while (win == false) {
+		
+		System.out.println("Guess a number between 1 and 10: ");
+		guess = input.nextInt();
+		numberOfTries++;
+		
+		if (guess == numberToGuess) {
+			win = true;
+		}
+		
+		if (guess == numberToGuess) {
+			
+		}
+		
+		else if (guess < numberToGuess) {
 
-}
+			System.out.println("Your guess is too low");
+			
+		}
+		
+		else if (guess > numberToGuess) {
+			
+			
+			System.out.println("Your guess is too high");
+		}
+		
+		
+		}
+		
+		System.out.println("You win!");
+		System.out.println("The number was " + numberToGuess);
+		System.out.println("It took you " + numberOfTries + " tries");
+
+	}
+	
+	
+
 }
